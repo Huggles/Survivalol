@@ -8,7 +8,7 @@ public class FollowObjectBehaviour : MonoBehaviour {
     [SerializeField] public Transform ObjectToFollow;
 
     [Range(1,50)][SerializeField] int m_FramesDelay = 10;
-    List<Vector3> m_UpcomingPositions;
+    List<Vector3> m_UpcomingPositions;  
 
     public FollowObjectBehaviour(Transform ObjectToFollow, int FramesDelay)
     {
