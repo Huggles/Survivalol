@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        UnityEngine.Debug.Log("PlayGame");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     

@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour
     
     void Resume()
     {
+        UnityEngine.Debug.Log("Resume");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -54,6 +55,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        UnityEngine.Debug.Log("Pause");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
