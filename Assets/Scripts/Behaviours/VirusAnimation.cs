@@ -33,14 +33,16 @@ public class VirusAnimation : MonoBehaviour
     }
     private void AdjustRotation()
     {
-        float newRotationX = this.transform.localRotation.x + m_RotationDirection.x + m_Iteration * m_AnimationSpeed;
-        float newRotationY = this.transform.localRotation.y + m_RotationDirection.y + m_Iteration * m_AnimationSpeed;
+        //float newRotationX = this.transform.localRotation.x + m_RotationDirection.x + m_Iteration * m_AnimationSpeed;
+        //float newRotationY = this.transform.localRotation.y + m_RotationDirection.y + m_Iteration * m_AnimationSpeed;
         float newRotationZ = this.transform.localRotation.z + m_RotationDirection.z + m_Iteration * m_AnimationSpeed;
-        this.transform.localRotation = Quaternion.Euler(newRotationX, newRotationY, newRotationZ);        
+        this.transform.localRotation = Quaternion.Euler(0, 0, newRotationZ);        
     }
     private void AdjustScale()
     {
         float Scale = m_ScaleDelta * Mathf.Sin(m_Iteration + m_ScalePhase);
-        this.transform.localScale = Vector3.one * (Scale + 1);
+        Vector3 newScale = Vector3.one * (Scale + 1);
+        newScale.z = this.transform.localScale.z;
+        this.transform.localScale = newScale;
     }
 }

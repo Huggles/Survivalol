@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PubSub;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,27 +17,16 @@ public class VirusCollisionBehaviour : MonoBehaviour
         m_IsPlayerControlled = this.GetComponentInParent<CharacterController2D>() ? true : false;
     }
 
-    private void FixedUpdate()
-    {
-                
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Colliders collided!");
-        
-        
-        
-    }
-    private void OnTriggerStay(Collider other)
-    {        
         if (other is SphereCollider)
         {
             if (!other.GetComponentInParent<VirusCollisionBehaviour>().m_IsPlayerControlled)
             {
                 Destroy(other.gameObject);
+                FoodTakenEvent foodTakenEvent = new FoodTakenEvent(1);
+                Hub.Default.Publish(foodTakenEvent);
             }
-            //SphereCollider otherSphereCollider = (SphereCollider)other;
         }
     }
 }

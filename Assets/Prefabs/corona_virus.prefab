@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4269643566968826147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.1}
   m_Children:
   - {fileID: 4069906808985617089}
   m_Father: {fileID: 0}
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AnimationSpeed: 2
-  m_ScaleDelta: 0.1
+  m_ScaleDelta: 0.01
   m_ScalePhase: 1
 --- !u!114 &487312581511097406
 MonoBehaviour:
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2397c1943de57fc4aa963f834a018b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_IsPlayerControlled: 0
 --- !u!1 &5101762349448434170
 GameObject:
   m_ObjectHideFlags: 0
