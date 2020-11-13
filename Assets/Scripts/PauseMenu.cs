@@ -12,6 +12,12 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject player;
+
+    public GameObject enemies;
+
+    public GameObject food;
+
     public void ResignGame()
     {
         SceneManager.LoadScene(0);
@@ -49,6 +55,9 @@ public class PauseMenu : MonoBehaviour
     {
         UnityEngine.Debug.Log("Resume");
         pauseMenuUI.SetActive(false);
+        player.SetActive(true);
+        enemies.SetActive(true);
+        food.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -57,6 +66,9 @@ public class PauseMenu : MonoBehaviour
     {
         UnityEngine.Debug.Log("Pause");
         pauseMenuUI.SetActive(true);
+        player.SetActive(false);
+        enemies.SetActive(false);
+        food.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
